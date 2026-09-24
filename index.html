@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Etch-a-Sketch</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Odin Etch-a-Sketch</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Etch-a-Sketch</h1>
-    </header>
-    <input type="number" id="grid-size" placeholder="Enter grid size (max 100)" min="1" max="100">
-    <button id="create-grid">Create Grid</button>
-  </div>
-  <div id="grid-container"></div>
+  <header>
+    <h1>✏️ Etch-a-Sketch ✏️</h1>
+  </header>
+
+
+
+  <section class="control-panel">
+    <div class="panel-section title-section">
+      <span class="version-tag">Sketchpad </span>
+    </div>
+
+    <div class="panel-section slider-section">
+      <div class="slider-header">
+        <label for="grid-slider">Grid Resolution (1-100)</label>
+        <span id="slider-val">64 x 64</span>
+      </div>
+      <input type="range" id="grid-slider" min="1" max="100" value="64" />
+      <div class="sub-label" id="grid-sub-val">64x64 Grid</div>
+    </div>
+
+    <div class="panel-section brush-section">
+      <label for="brush-color">Brush Color:</label>
+      <div class="color-picker-wrapper">
+        <input type="color" id="brush-color" value="#007BFF" />
+        <span id="color-hex-text">#007BFF</span>
+      </div>
+    </div>
+
+    <div class="panel-section action-section">
+      <button id="clear-btn" class="btn btn-secondary">Clear Canvas 🗑️</button>
+      <button id="rainbow-btn" class="btn btn-dark">Rainbow Mode</button>
+    </div>
+  </section>
+
+  <!-- Drawing canvas -->
+  <main id="grid-container"></main>
+
+  <footer>
+    <p>© Created by NIKHIL TIWARI</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
